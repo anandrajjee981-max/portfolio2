@@ -32,7 +32,14 @@ const Heo = () => {
           pin: true,
         }
       });
+    
 
+      tl.from(".bg-layer",{
+        scale : 1.45 ,
+        opacity : 0.87,
+        duration : 1/3,
+        ease : "power2.inOut"
+      })
       tl.fromTo(maskPathRef.current,
         { 
           scale: 23600, 
