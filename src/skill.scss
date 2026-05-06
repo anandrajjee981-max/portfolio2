@@ -1,0 +1,153 @@
+// Colors from your actual background image
+$neon-purple: #bd00ff;
+$neon-cyan: #00f0ff;
+$card-bg: rgba(13, 10, 25, 0.75); // Dark semi-transparent purple-black
+$text-color: #ffffff;
+
+.container {
+  background-image: url("../skill.png");
+  background-position: -100px; // Mobile par center background image better lagti hai
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px; // Mobile screen ke edges se thoda space rakhne ke liye
+  box-sizing: border-box;
+  z-index: 5;
+}
+
+// Neon Glowing Card
+.card {
+  background: $card-bg;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  // Dual color glowing border
+  border: 1px solid rgba($neon-cyan, 0.25);
+  border-top: 1px solid rgba($neon-cyan, 0.5);
+  border-left: 1px solid rgba($neon-cyan, 0.5);
+  border-right: 1px solid rgba($neon-purple, 0.5);
+  border-bottom: 1px solid rgba($neon-purple, 0.5);
+  
+  border-radius: 16px; // Mobile par corners thode normal rahenge
+  padding: 2rem 1.25rem; // Kam padding taaki andar space bache
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  
+  // Subtle purple-cyan shadow glow
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 15px rgba($neon-cyan, 0.05),
+    0 0 20px rgba($neon-purple, 0.1);
+  
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+      0 30px 60px rgba(0, 0, 0, 0.6),
+      inset 0 0 30px rgba($neon-cyan, 0.1),
+      0 0 40px rgba($neon-cyan, 0.2);
+    border-color: rgba($neon-cyan, 0.8);
+  }
+  .card {
+  opacity: 1;
+  visibility: visible;
+  z-index: 20;
+}
+
+  .title {
+    color: $text-color;
+    font-size: 1.8rem; // Mobile par responsive size
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Poppins', sans-serif;
+    
+    // Cool gradient text
+    background: linear-gradient(135deg, #fff 30%, $neon-cyan 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 8px rgba($neon-cyan, 0.3));
+  }
+}
+
+// Grid layout for skills inside the card
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; // Mobile par gap thoda kam kiya hai taaki badges wrap ho sakein
+  justify-content: center;
+}
+
+// High-tech Cyberpunk Badges
+.skill-badge {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 6px 12px; // Mobile par compact padding
+  border-radius: 8px;
+  font-size: 0.75rem; // Mobile par readability ke liye perfect size
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($neon-cyan, 0.1);
+    border-color: $neon-cyan;
+    color: #fff;
+    transform: scale(1.05) translateY(-2px);
+    
+    // Neon glow on hover
+    box-shadow: 
+      0 0 15px rgba($neon-cyan, 0.4),
+      inset 0 0 10px rgba($neon-cyan, 0.2);
+  }
+}
+
+// --- MEDIA QUERIES (FOR TABLET & DESKTOP) ---
+@media (min-width: 480px) {
+  .skill-badge {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  .skills-grid {
+    gap: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 24px;
+    background-position: center; // Large screens par wapas left-shift image
+  }
+
+  .card {
+    padding: 4rem;
+    border-radius: 24px;
+    
+    .title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      letter-spacing: 3px;
+    }
+  }
+
+  .skills-grid {
+    gap: 14px;
+  }
+
+  .skill-badge {
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.about {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 1.5rem;
+}
+.about .text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 90%;
+  text-align: center;
+}
+.about .text h2 {
+  font-size: 1.65rem;
+  line-height: 1.3;
+  font-weight: 800;
+  margin: 0;
+  color: #fff;
+  background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .about .text h2 {
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+/* 💻 Desktop Adjustments (Screens 768px and up) */
+@media (min-width: 768px) {
+  .about {
+    padding: 0;
+  }
+  .about .text {
+    gap: 1.5rem;
+    max-width: 80%;
+  }
+  .about .text h2 {
+    font-size: 2.5rem;
+    background-size: cover;
+  }
+}/*# sourceMappingURL=about.css.map */

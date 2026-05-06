@@ -3,11 +3,15 @@ import React from 'react'
 import "./App.scss";
 import Heo from './pages/Heo';
 
+import Aboutme from './pages/Aboutme';
+import Skill from './pages/Skill';
+
 const App = () => {
   return (
    <main>
 <Heo/>
-
+<Aboutme/>
+<Skill/>
    </main>
   )
 }
