@@ -23,21 +23,14 @@ const Heo = () => {
         y: svgCenterY - pathH / 2,
       });
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "+=300%",
-          scrub: 2,
-          pin: true,
-        }
-      });
+      const tl = gsap.timeline();
     
 
       tl.from(".bg-layer",{
         scale : 1.45 ,
         opacity : 0.87,
-        duration : 1/3,
+        duration : 1,
+        delay : 1,
         ease : "power2.inOut"
       })
       tl.fromTo(maskPathRef.current,

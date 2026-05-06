@@ -9,43 +9,68 @@ const Aboutme = () => {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // 1. Create a GSAP Context matched specifically to this container
-    let ctx = gsap.context(() => {
+    // 1. Create a GSAP MatchMedia instance
+    let mm = gsap.matchMedia();
+
+    // 2. Mobile and Desktop ke liye alag rules setup karenge
+    mm.add({
+      // Desktop: jab screen width 768px se badi ho
+      isDesktop: "(min-width: 768px)",
+      // Mobile: jab screen width 767px ya usse choti ho
+      isMobile: "(max-width: 767px)"
+    }, (context) => {
+      let { isDesktop } = context.conditions;
       
       const headings = gsap.utils.toArray('.text h2');
       if (headings.length === 0) return;
 
-      // 2. Set the initial state of your headings cleanly
+      // Mobile par 60px bohot zyada ho jata hai, isliye isse responsive banaya
       gsap.set(headings, {
-        y: 60,
+        y: isDesktop ? 60 : 30, 
         opacity: 0
       });
 
-      // 3. Create the ScrollTrigger Timeline
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "+=150%",
-          scrub: 2,
-          pin: true,
-          pinSpacing: true,
-          invalidateOnRefresh: true, // Recalculates heights dynamically
-        }
-      });
+      // Desktop: Pinned scroll animation chalegi
+      if (isDesktop) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "+=150%",
+            scrub: 1.5, // 2 se thoda kam kiya for better responsiveness
+            pin: true,
+            invalidateOnRefresh: true,
+          }
+        });
 
-      tl.to(headings, {
-        y: 0,
-        opacity: 1,
-        stagger: 0.3,
-        duration: 1,
-        ease: "power2.out"
-      });
+        tl.to(headings, {
+          y: 0,
+          opacity: 1,
+          stagger: 0.3,
+          duration: 1,
+          ease: "power2.out"
+        });
+      } 
+      // Mobile: Bina pin kiye, simple scroll transition (best user experience)
+      else {
+        headings.forEach((heading) => {
+          gsap.to(heading, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: heading,
+              start: "top 85%", // Jab text screen ke 85% area me aaye tab animate ho
+              toggleActions: "play none none reverse"
+            }
+          });
+        });
+      }
+    }, containerRef); // Scope to containerRef
 
-    }, containerRef); // Scopes all animations inside containerRef
-
-    // 4. CLEANUP: This matches your Heo.jsx perfectly and kills double-renders!
-    return () => ctx.revert();
+    // Cleanup everything
+    return () => mm.revert();
   }, []);
 
   return (
@@ -59,4 +84,4 @@ const Aboutme = () => {
   )
 }
 
-export default Aboutme
+export default Aboutme;
