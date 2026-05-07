@@ -40,6 +40,7 @@ const Heo = () => {
         },
         { 
           scale: 1,  
+          duration : 2,
           transformOrigin: `${pathW/2}px ${pathH/2}px`,
           ease: "power2.inOut" 
         }
