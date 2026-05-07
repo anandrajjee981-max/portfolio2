@@ -1,0 +1,160 @@
+$neon-cyan: #00f0ff;
+$neon-purple: #bd00ff;
+
+.project-section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  background: transparent;
+  overflow: hidden;
+
+  .project-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    color: white;
+    background: linear-gradient(135deg, #fff 30%, $neon-cyan 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 10px rgba($neon-cyan, 0.3));
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+      letter-spacing: 3px;
+    }
+  }
+
+  .swiper-container {
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  .project-link-wrapper {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    width: 320px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    transition: all 0.5s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    .project-card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      
+      img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; // Fix for full width cover
+        display: block;
+      }
+
+      .project-info {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 30px 15px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.95));
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.4s ease-out;
+
+        h3 {
+          color: white;
+          font-size: 1.3rem;
+          margin-bottom: 12px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .view-btn {
+          color: $neon-cyan;
+          border: 1px solid $neon-cyan;
+          padding: 6px 18px;
+          border-radius: 20px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          box-shadow: 0 0 10px rgba($neon-cyan, 0.2);
+        }
+      }
+    }
+
+    // Hover effect for Desktop
+    &:hover .project-info {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    // Auto-show for Center Slide (Best for Mobile)
+    &.swiper-slide-active {
+      border-color: rgba($neon-cyan, 0.6);
+      box-shadow: 0 0 30px rgba($neon-cyan, 0.2);
+      
+      .project-info {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .swipe-indicator {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    .swipe-text {
+      color: white;
+      font-size: 0.8rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      opacity: 0.5;
+    }
+
+    .swipe-line {
+      width: 60px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 100%;
+        background: $neon-cyan;
+        box-shadow: 0 0 15px $neon-cyan;
+        animation: swipeMove 2s infinite ease-in-out;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .swiper-slide {
+      width: 280px;
+      height: 400px;
+    }
+  }
+}
+
+@keyframes swipeMove {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
