@@ -6,6 +6,7 @@ import Heo from './pages/Heo';
 import Aboutme from './pages/Aboutme';
 import Skill from './pages/Skill';
 import Project from './pages/Project';
+import Certificate from './pages/Certificate';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
 <Aboutme/>
 <Skill/>
 <Project/>
+<Certificate/>
    </main>
   )
 }

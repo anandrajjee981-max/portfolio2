@@ -1,0 +1,187 @@
+// Premium Stealth Dark Palette
+$dark-matte-black: #050506;   // Clean, solid luxury black
+$dark-card-bg: #0d0d0f;       // Deep obsidian grey (highly premium card base)
+$accent-icy: #00f0ff;         // Tech Icy Blue
+$accent-silver: #e2e8f0;      // Clean Minimalist Silver
+$border-color: rgba(255, 255, 255, 0.04);
+$border-hover: rgba(0, 240, 255, 0.25);
+
+.cer {
+  background-color: $dark-matte-black;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+
+  // --- Title Section (Responsive & Clean Metallic Vibe) ---
+  .cyber-title {
+    font-size: clamp(1.8rem, 4vw, 3rem); // Fluid typography for perfect mobile scaling
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: clamp(30px, 8vh, 60px);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 2;
+    
+    // Minimalistic bottom accent line instead of flashy glitch text
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 2px;
+      background: $accent-icy;
+      margin: 10px auto 0 auto;
+      box-shadow: 0 0 8px $accent-icy;
+    }
+  }
+
+  // --- Responsive Swiper Wrapper ---
+  .swiper-container {
+    width: 100%;
+    max-width: 360px; // Standard web desktop size
+    height: auto;
+    aspect-ratio: 3 / 4.2; // Keeps the golden card ratio intact on all screen sizes
+    position: relative;
+    z-index: 2;
+    padding: 10px;
+
+    // Mobile optimized sizing
+    @media (max-width: 480px) {
+      max-width: 290px;
+    }
+    
+    @media (max-width: 360px) {
+      max-width: 260px;
+    }
+  }
+
+  .mySwiper {
+    width: 100%;
+    height: 100%;
+    overflow: visible; // To allow active card glows to bleed nicely
+  }
+
+  // --- Stealth-Black Slide Card ---
+  .swiper-slide {
+    background: $dark-card-bg;
+    border: 1px solid $border-color;
+    border-radius: 14px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.4s ease, 
+                box-shadow 0.4s ease;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+
+    // Hover State
+    &:hover {
+      transform: translateY(-6px) scale(1.02);
+      border-color: $border-hover;
+      box-shadow: 0 12px 30px rgba(0, 240, 255, 0.08), 
+                  0 0 50px rgba(0, 0, 0, 0.9);
+
+      .image-wrapper img {
+        transform: scale(1.04);
+        opacity: 0.95;
+      }
+
+      .cyber-btn {
+        background: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+
+  // --- Card Link Structure ---
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  // --- Clean Image Frame ---
+  .image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 58%;
+    overflow: hidden;
+    background: #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      opacity: 0.8;
+    }
+
+    // High-tech subtle dark overlay instead of colorful gradients
+    .cyber-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 60%,
+        rgba(0, 0, 0, 0.7) 100%
+      );
+      pointer-events: none;
+    }
+  }
+
+  // --- Card Typography Block ---
+  .card-info {
+    padding: clamp(16px, 4vw, 22px); // Responsive internal padding
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    h3 {
+      font-size: clamp(1rem, 3vw, 1.15rem); // Fluid font size
+      font-weight: 700;
+      color: $accent-silver;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 12px 0;
+      line-height: 1.4;
+
+      // Clean line clamping for safety
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+  }
+
+  // --- Premium Minimal Button ---
+  .cyber-btn {
+    align-self: flex-start;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: rgba($accent-silver, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    margin-top: auto;
+  }
+}
