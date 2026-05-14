@@ -32,10 +32,18 @@ const Certificate = () => {
             
             <div className="swiper-container">
                 <Swiper
-                    effect={'cards'}
-                    grabCursor={true}
-                    modules={[EffectCards]}
-                    className="mySwiper"
+                   effect={'cards'}
+    grabCursor={true}
+    loop={true} // Isse rotation infinity ho jayegi
+    centeredSlides={true} // Slide hamesha center mein rahegi
+    modules={[EffectCards]}
+    className="mySwiper"
+    cardsEffect={{
+        slideShadows: false, // Performance aur clean look ke liye
+        rotate: true, // Cards ko halka rotate karne ke liye
+        perSlideOffset: 8, // Ek ke upar ek dikhne ka offset
+        perSlideRotate: 2, // Har slide ka rotation angle
+    }}
                 >
                     {mycert.map(function (elem, index) {
                         return (
