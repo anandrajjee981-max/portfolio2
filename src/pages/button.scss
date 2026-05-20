@@ -1,0 +1,62 @@
+.modern-download-btn {
+  position: relative;
+  display: inline-block;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px; // Modern rounded rectangle, standard capsule se zyada premium lagta hai
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden; // Taaki glow aur icon jumps bahar na dikhein
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .glow-effect {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0) 60%);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .btn-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    span {
+      display: inline-block;
+    }
+
+    .icon-overflow {
+      position: relative;
+      width: 1.2rem;
+      height: 1.2rem;
+      overflow: hidden; // Isme icon loop hokar wapas aayega
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}

@@ -3,7 +3,7 @@ import "../certificate.scss";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { EffectCards } from 'swiper/modules'
 
-// Swiper styles import karna zaroori hai
+// Swiper styles
 import 'swiper/css'
 import 'swiper/css/effect-cards'
 
@@ -12,7 +12,7 @@ const Certificate = () => {
         {
             name: "Ranchi hacks",
             link: "https://certificate.givemycertificate.com/c/19f89d6d-acd8-48bb-b2c4-d436888254b6",
-            image: './ranchihacks.jpg'
+            image: '/ranchihacks.jpg'
         },
         {
             name: "gen ai",
@@ -22,9 +22,13 @@ const Certificate = () => {
         {
             name: "free code camp v8",
             link: "https://www.freecodecamp.org/certification/anand-raj/responsive-web-design",
-            image: 'free.jpg'
+            image: '/free.jpg'
         }
     ]
+
+    // Swiper EffectCards ko infinite loop chalane ke liye kam se kam 5-6 items chahiye hote hain.
+    // Hum array ko clone kar rahe hain taaki total 6 items ban jayein bina extra code likhe.
+    const extendedCert = [...mycert, ...mycert];
 
     return (
         <div className='cer'>
@@ -32,20 +36,21 @@ const Certificate = () => {
             
             <div className="swiper-container">
                 <Swiper
-                   effect={'cards'}
-    grabCursor={true}
-    loop={true} // Isse rotation infinity ho jayegi
-    centeredSlides={true} // Slide hamesha center mein rahegi
-    modules={[EffectCards]}
-    className="mySwiper"
-    cardsEffect={{
-        slideShadows: false, // Performance aur clean look ke liye
-        rotate: true, // Cards ko halka rotate karne ke liye
-        perSlideOffset: 8, // Ek ke upar ek dikhne ka offset
-        perSlideRotate: 2, // Har slide ka rotation angle
-    }}
+                    effect={'cards'}
+                    grabCursor={true}
+                    loop={true} 
+                    centeredSlides={true} 
+                    modules={[EffectCards]}
+                    className="mySwiper"
+                    cardsEffect={{
+                        slideShadows: false, 
+                        rotate: true, 
+                        perSlideOffset: 8, 
+                        perSlideRotate: 2, 
+                    }}
                 >
-                    {mycert.map(function (elem, index) {
+                    {/* Yahan humne extended array map kiya hai */}
+                    {extendedCert.map(function (elem, index) {
                         return (
                             <SwiperSlide key={index}>
                                 <a href={elem.link} target='_blank' rel="noreferrer" className="card-link">

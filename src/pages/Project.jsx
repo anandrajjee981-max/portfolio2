@@ -8,6 +8,12 @@ import '../project.scss';
 const Project = () => {
   let files = [
     {
+      image : "https://i.pinimg.com/736x/bd/df/ef/bddfef90a6245e481fad5267b9f3fc51.jpg",
+      name : "FitNova",
+      livelink : "https://summer-internship-hackathon-2026-te.vercel.app/"
+
+    },
+    {
       image: "https://i.pinimg.com/1200x/01/ab/08/01ab08f7f61e5b6238eab104470d0903.jpg",
       name: "mac-os",
       livelink: "https://anandrajjee981-max.github.io/mac-os/"

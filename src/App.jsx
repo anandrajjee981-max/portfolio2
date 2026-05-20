@@ -7,6 +7,7 @@ import Aboutme from './pages/Aboutme';
 import Skill from './pages/Skill';
 import Project from './pages/Project';
 import Certificate from './pages/Certificate';
+import Contact from './pages/Contact';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
 <Skill/>
 <Project/>
 <Certificate/>
+<Contact/>
    </main>
   )
 }
