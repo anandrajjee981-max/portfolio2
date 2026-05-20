@@ -6,7 +6,7 @@ import "./button.scss";
 const Resume = () => {
   return (
     <motion.a 
-      href="/Anand_Raj_Resume.pdf" 
+      href="/resume.pdf" 
       download="Anand_Raj_Resume.pdf"
       className="modern-download-btn"
       
