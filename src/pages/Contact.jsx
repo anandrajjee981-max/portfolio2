@@ -76,13 +76,24 @@ const Contact = () => {
       >
         <h2>contact me</h2>
         <div className="social-icons">
+       
+                    <a href='https://github.com/anandrajjee981-max' target='_blank'>
+              <DiGithubBadge />
+    
+        </a>
+
+        <a href = "https://www.instagram.com/anand_raj9435/" target='_blank' >
+              <FaInstagramSquare />
+        </a>
+        <a href='https://www.linkedin.com/in/anand-raj-059011387/' target='_blank'>
           <FaLinkedinIn />
-          <FaInstagramSquare />
-          <DiGithubBadge />
+    
+        </a>
+       
         </div>
       </div>
       <div className="resume">
-        <Resume/>
+      <Resume/>
       </div>
     </div>
   );
