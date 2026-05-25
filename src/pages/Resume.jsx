@@ -31,7 +31,7 @@ const Resume = () => {
           }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
-          Download Resume
+          My Resume
         </motion.span>
 
         {/* Icon Container with Arrow-Drop Animation */}
