@@ -20,6 +20,12 @@ livelink : " https://affectra-koea.onrender.com"
 
     },
     {
+      image : "https://i.pinimg.com/1200x/29/95/00/2995008486e78b6ff55f9789cb9adb5a.jpg",
+      name : "CineVerse",
+      livelink : "https://cineverse-zc5r.onrender.com",
+
+    },
+    {
       image: "https://i.pinimg.com/1200x/01/ab/08/01ab08f7f61e5b6238eab104470d0903.jpg",
       name: "mac-os",
       livelink: "https://anandrajjee981-max.github.io/mac-os/"
