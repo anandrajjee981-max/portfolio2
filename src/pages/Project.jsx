@@ -12,6 +12,11 @@ image : "https://i.pinimg.com/736x/c5/db/f9/c5dbf944b939e5a4332173e63d8f5c06.jpg
 name : "Affectra",
 livelink : " https://affectra-koea.onrender.com"
     },
+    {
+image:"https://i.pinimg.com/736x/4e/1f/f2/4e1ff29071af5cb746f65f2184592d27.jpg",
+name:"Sketch AI",
+livelink:"https://sketch-ai-earj.onrender.com/"
+    },
 
     {
       image : "https://i.pinimg.com/736x/bd/df/ef/bddfef90a6245e481fad5267b9f3fc51.jpg",
