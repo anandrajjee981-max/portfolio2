@@ -7,8 +7,8 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Skill = () => {
   const skills = [
-    "HTML5", "CSS3", "JavaScript", "React", 
-    "Tailwind", "SCSS", "MongoDB", "GSAP", "MERN"
+    "HTML5", "CSS3", "JavaScript", "PostgreSql", 
+    "Tailwind", "SCSS", "Langchain", "GSAP", "MERN","Typescript"
   ];
   
   const containerRef = useRef(null);

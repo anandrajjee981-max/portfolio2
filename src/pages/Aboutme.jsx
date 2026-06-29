@@ -74,13 +74,23 @@ const Aboutme = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className='about'>
-      <div className="text">
-        <h2>I’m a front-end developer who loves building clean and interactive web experiences.</h2>
-        <h2>I work with React, JavaScript, and modern tools to turn ideas into real projects.</h2>
-        <h2>Currently exploring the MERN stack.</h2>
-      </div>
-    </div>
+ <div ref={containerRef} className="about">
+  <div className="text">
+    <h2>
+      Full Stack Developer focused on building fast, scalable, and user-centric web applications that solve real world problems.
+    </h2>
+
+    <h2>
+      I work with JavaScript, TypeScript, React, Node.js, Express, MongoDB, PostgreSQL, and Redis to develop modern full stack systems.
+    </h2>
+
+    <h2>
+  exploring AI integrations using LLM APIs to build practical developer tools and intelligent applications.
+    </h2>
+
+  
+  </div>
+</div>
   )
 }
 
