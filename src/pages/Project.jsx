@@ -8,6 +8,11 @@ import '../project.scss';
 const Project = () => {
   let files = [
     {
+image :"https://i.pinimg.com/1200x/6d/d4/77/6dd4773fdb9bb2cf1f54c2b471ed6410.jpg",
+name : "Repolens Ai",
+livelink :"https://repolens-ai-seven.vercel.app"
+    },
+    {
 image :"https://i.pinimg.com/736x/56/08/db/5608db5b03895bbbae9000cb16db9dba.jpg",
 name : "Recall Ai",
 livelink :"https://recall-ai-ashen.vercel.app"

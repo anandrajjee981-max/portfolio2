@@ -9,6 +9,11 @@ import 'swiper/css/effect-cards'
 
 const Certificate = () => {
     const mycert = [
+         {
+            name: "Flow zint AI hackathon",
+            link: "https://drive.google.com/file/d/1_jQCFC3-PiznVrgfiluq91zLZlN4t3Zt/view",
+            image: '/flowzint.jpg'
+        },
         {
             name: "Ranchi hacks",
             link: "https://certificate.givemycertificate.com/c/19f89d6d-acd8-48bb-b2c4-d436888254b6",
